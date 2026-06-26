@@ -39,59 +39,10 @@ function TypingRoles() {
   )
 }
 
-function NeuralGraphic() {
-  // A small abstract node-graph, evoking a neural network rather than a generic illustration.
-  const nodes = [
-    { x: 40, y: 60 }, { x: 40, y: 140 }, { x: 40, y: 220 },
-    { x: 160, y: 30 }, { x: 160, y: 100 }, { x: 160, y: 170 }, { x: 160, y: 250 },
-    { x: 280, y: 70 }, { x: 280, y: 150 }, { x: 280, y: 220 },
-  ]
-  const links: [number, number][] = [
-    [0, 3], [0, 4], [1, 4], [1, 5], [2, 5], [2, 6],
-    [3, 7], [4, 7], [4, 8], [5, 8], [5, 9], [6, 9],
-  ]
-
-  return (
-    <motion.svg
-      viewBox="0 0 320 280"
-      className="w-full max-w-md animate-float"
-      role="img"
-      aria-label="Abstract neural network graphic"
-    >
-      {links.map(([a, b], i) => (
-        <motion.line
-          key={i}
-          x1={nodes[a].x} y1={nodes[a].y} x2={nodes[b].x} y2={nodes[b].y}
-          stroke="url(#lineGrad)" strokeWidth="1.4"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: 1, opacity: 0.7 }}
-          transition={{ duration: 1.2, delay: i * 0.06, ease: 'easeOut' }}
-        />
-      ))}
-      {nodes.map((n, i) => (
-        <motion.circle
-          key={i}
-          cx={n.x} cy={n.y} r={i % 3 === 0 ? 6 : 4.5}
-          fill={i % 3 === 0 ? '#06B6D4' : '#3B82F6'}
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 + i * 0.07 }}
-        />
-      ))}
-      <defs>
-        <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#3B82F6" />
-          <stop offset="100%" stopColor="#8B5CF6" />
-        </linearGradient>
-      </defs>
-    </motion.svg>
-  )
-}
-
 export default function Hero() {
   return (
     <section id="home" className="relative flex min-h-screen items-center px-4 pb-16 pt-24 sm:px-6 lg:px-8 lg:pt-28">
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+      <div className="mx-auto w-full max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -122,14 +73,6 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="hidden lg:flex lg:justify-center"
-        >
-          <NeuralGraphic />
-        </motion.div>
       </div>
     </section>
   )
