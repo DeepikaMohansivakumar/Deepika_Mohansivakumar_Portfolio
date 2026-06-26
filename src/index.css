@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: #f7f7fb;
+  color: #0b0b0f;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark body {
+  background-color: #0b0b0f;
+  color: #f1f5f9;
+}
+
+::selection {
+  background: rgba(59, 130, 246, 0.35);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b82f6, #8b5cf6);
+  border-radius: 8px;
+}
+
+@layer components {
+  .glass-card {
+    @apply relative rounded-2xl border border-black/10 bg-white/70 shadow-[0_8px_32px_rgba(0,0,0,0.06)] backdrop-blur-xl dark:border-white/10 dark:bg-white/5 dark:shadow-[0_8px_32px_rgba(0,0,0,0.25)];
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-electric via-violet to-cyan bg-clip-text text-transparent;
+  }
+  .section-label {
+    @apply font-mono text-xs uppercase tracking-[0.2em] text-electric;
+  }
+  .btn-base {
+    @apply inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-all duration-300;
+  }
+  .btn-primary {
+    @apply btn-base bg-gradient-to-r from-electric to-violet text-white shadow-glow hover:scale-[1.03] hover:shadow-[0_0_55px_rgba(139,92,246,0.4)];
+  }
+  .btn-outline {
+    @apply btn-base border border-black/15 text-ink hover:border-electric hover:text-electric dark:border-white/20 dark:text-slate-100;
+  }
+  .chip {
+    @apply rounded-full border border-black/10 bg-black/5 px-3 py-1.5 text-xs font-mono text-slate-700 transition-colors hover:border-electric/60 hover:text-ink dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:text-white;
+  }
+}
+
+/* Focus visibility for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
