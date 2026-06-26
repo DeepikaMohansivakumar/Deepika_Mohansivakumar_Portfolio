@@ -121,14 +121,6 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex justify-center"
-        >
-          <div className="relative mx-auto w-72 max-w-full rounded-3xl border border-white/20 bg-white/10 p-3 backdrop-blur-xl shadow-2xl"><img src="/profile.jpg" alt="Deepika" className="w-full rounded-2xl object-cover"/></div>
-        </motion.div>
       </div>
     </section>
   )
