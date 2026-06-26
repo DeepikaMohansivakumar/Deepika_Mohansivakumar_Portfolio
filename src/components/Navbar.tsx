@@ -29,7 +29,7 @@ export default function Navbar({ theme, onToggleTheme }: Props) {
     <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-4">
       <nav className="mx-auto flex max-w-5xl items-center justify-between rounded-full border border-black/10 bg-white/70 px-5 py-3 backdrop-blur-xl dark:border-white/10 dark:bg-white/5">
         <a href="#home" className="font-display text-base font-semibold text-ink dark:text-white">
-          Deepika<span className="gradient-text">.</span>
+          Deepika Mohansivakumar<span className="gradient-text">.</span>
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">
