@@ -10,8 +10,8 @@ const traits = [
 
 export default function About() {
   return (
-    <section id="about" className="py-28">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="about" className="py-24 sm:py-28">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -24,7 +24,7 @@ export default function About() {
           </h2>
         </motion.div>
 
-        <div className="mt-12 grid grid-cols-1 gap-10 lg:grid-cols-[1.3fr_1fr]">
+        <div className="mt-10 grid grid-cols-1 gap-8 sm:mt-12 sm:gap-10 lg:grid-cols-[1.3fr_1fr]">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -51,7 +51,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="glass-card grid grid-cols-2 gap-4 p-6"
+            className="glass-card grid grid-cols-1 gap-4 p-6 sm:grid-cols-2"
           >
             {traits.map(({ icon: Icon, label }) => (
               <div key={label} className="flex flex-col items-start gap-2">

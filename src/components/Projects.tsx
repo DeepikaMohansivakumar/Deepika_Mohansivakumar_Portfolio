@@ -11,8 +11,8 @@ export default function Projects() {
   const galleryProject = projects.find((p) => p.id === galleryProjectId)
 
   return (
-    <section id="projects" className="py-28">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="projects" className="py-24 sm:py-28">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -23,7 +23,7 @@ export default function Projects() {
           <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl dark:text-white">Things I've built</h2>
         </motion.div>
 
-        <div className="mt-12 space-y-10">
+        <div className="mt-10 space-y-8 sm:mt-12 sm:space-y-10">
           {projects.map((project, i) => (
             <motion.article
               key={project.id}
@@ -31,9 +31,9 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="glass-card overflow-hidden p-7 sm:p-9 transition-transform hover:-translate-y-1"
+              className="glass-card overflow-hidden p-6 transition-transform hover:-translate-y-1 sm:p-9"
             >
-              <div className="flex flex-wrap items-start justify-between gap-4">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                   <div className="mb-2 flex flex-wrap gap-2">
                     {project.categories.map((cat) => (
@@ -48,7 +48,7 @@ export default function Projects() {
                   <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{project.tagline}</p>
                 </div>
 
-                <div className="flex gap-3">
+                <div className="flex flex-wrap gap-3">
                   {project.github && (
                     <a
                       href={project.github}

@@ -90,12 +90,13 @@ function NeuralGraphic() {
 
 export default function Hero() {
   return (
-    <section id="home" className="relative flex min-h-screen items-center pt-28 pb-16">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2">
+    <section id="home" className="relative flex min-h-screen items-center px-4 pb-16 pt-24 sm:px-6 lg:px-8 lg:pt-28">
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
+          className="mx-auto max-w-2xl text-center sm:text-left"
         >
           <p className="section-label mb-4">Final-Year AI &amp; ML Engineering Student</p>
           <h1 className="font-display text-4xl font-bold leading-[1.05] text-ink sm:text-5xl lg:text-6xl dark:text-white">
@@ -104,14 +105,14 @@ export default function Hero() {
           <p className="mt-4 h-8 text-xl sm:text-2xl">
             <TypingRoles />
           </p>
-          <p className="mt-6 max-w-xl text-base text-slate-600 dark:text-slate-300">
+          <p className="mt-6 text-base text-slate-600 dark:text-slate-300 sm:max-w-xl">
             Passionate Artificial Intelligence &amp; Machine Learning student with a strong interest in developing
             intelligent systems, modern web applications, and real-world AI solutions. I enjoy solving practical
             problems through technology and continuously learning new skills to become an industry-ready software
             engineer.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-wrap justify-center gap-4 sm:justify-start">
             <a href="#projects" className="btn-primary">
               View Projects <ArrowRight size={16} />
             </a>
@@ -121,6 +122,14 @@ export default function Hero() {
           </div>
         </motion.div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="hidden lg:flex lg:justify-center"
+        >
+          <NeuralGraphic />
+        </motion.div>
       </div>
     </section>
   )

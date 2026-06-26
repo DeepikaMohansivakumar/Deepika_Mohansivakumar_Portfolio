@@ -3,8 +3,8 @@ import { experience } from '../data/experience'
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-28">
-      <div className="mx-auto max-w-4xl px-6">
+    <section id="experience" className="py-24 sm:py-28">
+      <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -15,7 +15,7 @@ export default function Experience() {
           <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl dark:text-white">Where I've worked</h2>
         </motion.div>
 
-        <div className="mt-12 border-l border-black/10 pl-8 dark:border-white/10">
+        <div className="mt-10 border-l border-black/10 pl-6 sm:mt-12 sm:pl-8 dark:border-white/10">
           {experience.map((item, i) => (
             <motion.div
               key={item.org}
@@ -25,7 +25,7 @@ export default function Experience() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="relative pb-2"
             >
-              <span className="absolute -left-[34px] top-1.5 h-3 w-3 rounded-full bg-gradient-to-br from-electric to-violet shadow-glow" />
+              <span className="absolute -left-[13px] top-1.5 h-3 w-3 rounded-full bg-gradient-to-br from-electric to-violet shadow-glow sm:-left-[34px]" />
               <span className="font-mono text-xs text-electric">{item.duration}</span>
               <h3 className="mt-1 font-display text-lg font-semibold text-ink dark:text-white">{item.role}</h3>
               <p className="text-sm text-slate-500 dark:text-slate-400">
