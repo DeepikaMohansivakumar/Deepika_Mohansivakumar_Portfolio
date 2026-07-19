@@ -5,11 +5,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: '#0B0B0F',
-        surface: '#13131A',
-        electric: '#3B82F6',
-        violet: '#8B5CF6',
-        cyan: '#06B6D4',
+        ink: '#111827',
+        surface: '#102A1F',
+        background: '#071A12',
+        section: '#0B1F17',
+        emerald: '#34D399',
+        emeraldDark: '#059669',
+        mint: '#6EE7B7',
+        mintSoft: '#A7F3D0',
+        muted: '#CBD5E1',
+        'muted-dark': '#94A3B8',
+        glow: '#A7F3D0',
       },
       fontFamily: {
         display: ['"Space Grotesk"', 'sans-serif'],
@@ -18,16 +24,17 @@ export default {
       },
       backgroundImage: {
         'glow-gradient':
-          'radial-gradient(circle at 20% 20%, rgba(59,130,246,0.25), transparent 40%), radial-gradient(circle at 80% 0%, rgba(139,92,246,0.25), transparent 40%), radial-gradient(circle at 50% 100%, rgba(6,182,212,0.2), transparent 45%)',
+          'radial-gradient(circle at 10% 10%, rgba(52,211,153,0.22), transparent 28%), radial-gradient(circle at 95% 5%, rgba(167,243,208,0.16), transparent 30%), radial-gradient(circle at 70% 90%, rgba(16,185,129,0.12), transparent 35%)',
       },
       boxShadow: {
-        glow: '0 0 40px rgba(59,130,246,0.25)',
+        glow: '0 0 40px rgba(52,211,153,0.22)',
+        soft: '0 18px 80px rgba(7,26,18,0.24)',
       },
       keyframes: {
         blob: {
           '0%, 100%': { transform: 'translate(0px, 0px) scale(1)' },
-          '33%': { transform: 'translate(30px, -40px) scale(1.1)' },
-          '66%': { transform: 'translate(-20px, 20px) scale(0.95)' },
+          '33%': { transform: 'translate(24px, -24px) scale(1.05)' },
+          '66%': { transform: 'translate(-20px, 24px) scale(0.96)' },
         },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
@@ -35,7 +42,7 @@ export default {
         },
       },
       animation: {
-        blob: 'blob 12s ease-in-out infinite',
+        blob: 'blob 14s ease-in-out infinite',
         float: 'float 6s ease-in-out infinite',
       },
     },

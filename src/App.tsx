@@ -13,14 +13,14 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 export default function App() {
-  const { theme, toggleTheme } = useTheme()
+  useTheme()
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
       <AnimatedBackground />
       <ScrollProgress />
-      <Navbar theme={theme} onToggleTheme={toggleTheme} />
-      <main>
+      <Navbar />
+      <main className="pt-20">
         <Hero />
         <About />
         <Skills />
